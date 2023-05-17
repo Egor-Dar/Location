@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26bf3d387f9554fa9bcabd36907385, type: 3}
+  m_Name: Westland_Sections
+  m_EditorClassIdentifier: 
+  sectionsMain:
+  - {fileID: 7296655037437177442, guid: 77b86c0fdec2aa940905b3251f0a8480, type: 3}
+  - {fileID: 7051219176342797357, guid: ee3f489b0e5ba674eba6243332bee854, type: 3}
+  - {fileID: 1103880694369539225, guid: e4376d6540b595f409db2d6772a5b47b, type: 3}
+  - {fileID: 5851648655909354141, guid: c408b41de06f4ba479293aab6304ad4b, type: 3}
+  - {fileID: 578054238576591572, guid: 319426b9627a3414aa1fa712fd011540, type: 3}
+  - {fileID: 8659479040694906, guid: cd7d4f87d72230941844f815479f4324, type: 3}
+  - {fileID: 6883148540650416926, guid: 6eea597a2a35bf74ba1fc64282e8e0b4, type: 3}
+  - {fileID: 4713556695097390897, guid: c11fa3c9ac742a549993a97133c1e002, type: 3}
+  - {fileID: 2940746185217751169, guid: 1787bc7dbffa6d243adf2d72ea4c3506, type: 3}
+  - {fileID: 2126593435752566953, guid: c81e1463e6f240c4899e7a03c6278e66, type: 3}
+  - {fileID: 1798060950208796571, guid: 45570669c19a09d4bbec56f0cb2b7653, type: 3}
+  - {fileID: 2288253278932512607, guid: a02ecb1b4bb355845aebe9be8747fa60, type: 3}
+  - {fileID: 5759549244124175310, guid: ca9677a4020b0fb4bbf0fb69317f4ea3, type: 3}
+  - {fileID: 3560918354572338110, guid: 4ad09bd13c92bee42a870473a4472059, type: 3}
+  - {fileID: 5715445727356003818, guid: 405c042bc1cbb89419efd1ff84560fb1, type: 3}
+  - {fileID: 6866973275852816593, guid: 8cab4d1b0fbda69458419ca1848e962e, type: 3}
+  - {fileID: 2973610823051511640, guid: 65c3bf15dc3077f47a0ca774ee0fb160, type: 3}
+  - {fileID: 6082382940629763884, guid: 4260cefe37a13e54da5c908a779ac6df, type: 3}
+  sectionCheckpoint:
+  - {fileID: 9071690068726060758, guid: 8a725063da0b53a46b1b503490bca5d6, type: 3}
+  - {fileID: 2098137034051227121, guid: 2ff6ef1d7681d204db028ba9bb437a1f, type: 3}
+  sectionBoss:
+  - {fileID: 3339031374802331251, guid: 5f8f99d5c37944148ac1fe3b297d44b0, type: 3}
+  - {fileID: 1311888304009004909, guid: 0d7e776cd1a78cf46bd64705e04381b0, type: 3}

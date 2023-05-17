@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26bf3d387f9554fa9bcabd36907385, type: 3}
+  m_Name: Coast_Sections
+  m_EditorClassIdentifier: 
+  sectionsMain:
+  - {fileID: 1019699001211562724, guid: 73cc7150fffc49249a1039f8eb965869, type: 3}
+  - {fileID: 6894758393243608804, guid: bf2c85606c04ae841a33705130654fe7, type: 3}
+  - {fileID: 8739274626098927133, guid: 89d81dfa6eb532d42a5b926b2b0ac90a, type: 3}
+  - {fileID: 7209303602221548268, guid: 1852d26186986de4ab7990a5985898b8, type: 3}
+  - {fileID: 3608352858886505311, guid: 149da524095d39f4987955c58260ef94, type: 3}
+  - {fileID: 5187073931746612951, guid: 3e87d8ff0c5f8dd4abcafe7a972d481a, type: 3}
+  - {fileID: 2054946248903643615, guid: f55e98372ea135446853df1764af5688, type: 3}
+  - {fileID: 2793380150106377469, guid: 1994aa4565335c54897d4bcd2674a523, type: 3}
+  - {fileID: 6911860258319873039, guid: 121ae784d9a7c8746a1d2c921838f402, type: 3}
+  - {fileID: 5565459652866282521, guid: d5c866149d2c76b409bb4f4eb704dcc4, type: 3}
+  - {fileID: 8471923827282585723, guid: 8060da0909668804fbb2116b321cb536, type: 3}
+  - {fileID: 29718809647696653, guid: 071fe219a43c35c4ea02bd5c5fe297b1, type: 3}
+  - {fileID: 868801624168262130, guid: 92a61fc2113e91d4d802e30f12c1a2be, type: 3}
+  - {fileID: 4169119953490744853, guid: 8b60cd86aa518f04c8b30e4b05c60728, type: 3}
+  - {fileID: 2792233588344703147, guid: c2dd74daf6c551644aed9ac19fbd1ca0, type: 3}
+  - {fileID: 7335078175196417766, guid: de87437ff8a74f44c85c0f44a7f1e158, type: 3}
+  - {fileID: 5897487605181698102, guid: 1968bbd90e55050438645be91e90bab6, type: 3}
+  - {fileID: 8088946305014747987, guid: 8b022f60c01127b46b200a24d05fcbfc, type: 3}
+  - {fileID: 1943947284647245477, guid: 75666eb489650d04bbe1273fcf79b42b, type: 3}
+  - {fileID: 5283945468355895604, guid: e9bc60335a22e0e49a95fc774624435a, type: 3}
+  sectionCheckpoint:
+  - {fileID: 1940802050586051676, guid: 387df8e79c96efa4ba2cffe2e4579431, type: 3}
+  - {fileID: 8525484033159319986, guid: 8ec143b69cfbbc14ca8757a4548de689, type: 3}
+  sectionBoss:
+  - {fileID: 1940802050586051676, guid: 5c45ff25753e60e44b38cc1a8d6daa3a, type: 3}
+  - {fileID: 1370554009205245460, guid: 149909e1cc28ad449b6601240b979e21, type: 3}
+  - {fileID: 5536948173132991427, guid: c451bb08bcddc004d8eb700eeea223a5, type: 3}
+  - {fileID: 762268097228047556, guid: 020495ac887b5d54b808c6adcfad2570, type: 3}

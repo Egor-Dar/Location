@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26bf3d387f9554fa9bcabd36907385, type: 3}
+  m_Name: Mountains_Sections
+  m_EditorClassIdentifier: 
+  sectionsMain:
+  - {fileID: 8981855221381854841, guid: e33748edaeda7304794086463e12a5c9, type: 3}
+  - {fileID: 1809168133659176937, guid: b090090085a46294a87c99b78e77a340, type: 3}
+  - {fileID: 3105296969701532285, guid: 8dbefbf67b3f2984893ec5ff0b7abd2a, type: 3}
+  - {fileID: 7829964733434836959, guid: 1c00c0a7c420e7c419dfd6ecaf250cb3, type: 3}
+  - {fileID: 3110284069930635697, guid: 82869a6f388c7cb47938323e0c86cf89, type: 3}
+  - {fileID: 4228961329762214006, guid: 9fc1823c6de7658488f871f7223bfb0a, type: 3}
+  - {fileID: 8184251438879111477, guid: 324b374a78a9e5349976e819b78a9ebc, type: 3}
+  - {fileID: 7746279738021739013, guid: 47a98216a4b622947bdecc120e8aebdd, type: 3}
+  - {fileID: 1213709030429338460, guid: 60cf9a6c02cbd7c4d936de79d60a5545, type: 3}
+  - {fileID: 3702011643501480736, guid: 25371ecd914949d4a9aab25a7f8dc7e2, type: 3}
+  - {fileID: 2926489624180026443, guid: cf04137946a0a984697101ffd1ad569f, type: 3}
+  - {fileID: 517435771450189162, guid: bdf47e2c8a4d20f48ab48cc8e4c295ca, type: 3}
+  sectionCheckpoint:
+  - {fileID: 5542741041827992588, guid: 1f4aeedbe67e2e14bad16e626a05f88f, type: 3}
+  sectionBoss:
+  - {fileID: 3509878824073748499, guid: f1d85055ecf48674090aa8fc318da96b, type: 3}
+  - {fileID: 7926800173302656195, guid: 67d4854c9517c48469407fb36975d52a, type: 3}
