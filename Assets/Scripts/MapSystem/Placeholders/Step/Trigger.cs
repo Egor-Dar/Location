@@ -1,13 +1,15 @@
 ﻿using System;
 using Better.Attributes.Runtime.Gizmo;
+using Newtonsoft.Json;
+using Spawners;
 using UnityEngine;
 
 namespace MapSystem.Placeholders.Step
 {
     [Serializable]
-    internal class Trigger
+    public class Trigger
     {
-        [SerializeField] private BoundRef bound;
+        [JsonProperty] [SerializeField] private BoundRef bound;
         private bool _continueEnter;
         private bool _continueExit;
         private bool _initialized;
@@ -58,17 +60,54 @@ namespace MapSystem.Placeholders.Step
         private class BoundRef
         {
             [Gizmo] [SerializeField] private Bounds bound;
+            [JsonIgnore] private Vector3Ref _setter;
 
+
+            [JsonProperty]
+            private Vector3Ref SizeJson
+            {
+                get
+                {
+                    _setter ??= new Vector3Ref();
+                    _setter.Value = bound.size;
+                    return _setter;
+                }
+                set => bound.size = value.Value;
+            }            
+            [JsonProperty]
+            private Vector3Ref PositionJson
+            {
+                get
+                {
+                    _setter ??= new Vector3Ref();
+                    _setter.Value = bound.center;
+                    return _setter;
+                }
+                set => bound.center = value.Value;
+            }
+            
+            [JsonIgnore]
             public Vector3 Size
             {
                 get => bound.size;
-                set { bound.size = value; }
+                set
+                {
+                    _setter ??= new Vector3Ref();
+                    _setter.Value = value;
+                    SizeJson = _setter;
+                }
             }
 
+            [JsonIgnore]
             public Vector3 Position
             {
                 get => bound.center;
-                set { bound.center = value; }
+                set
+                {
+                    _setter ??= new Vector3Ref();
+                    _setter.Value = value;
+                    PositionJson = _setter;                    
+                }
             }
 
             public bool Contains(Vector3 position) => bound.Contains(position);

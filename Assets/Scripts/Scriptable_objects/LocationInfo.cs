@@ -1,35 +1,46 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Better.SceneManagement.Runtime;
+using Location;
+using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scriptable_objects
 {
-    [CreateAssetMenu(fileName = "NewLevel")]
-    public class LocationInfo : ScriptableObject
+    [Serializable]
+    public class LocationInfo
     {
-        [SerializeField] private Sprite sprite;
-        [SerializeField] private string name;
-        [SerializeField] private string progress;
-        [SerializeField] private List<Sprite> enemies;
+        [JsonProperty] [SerializeField] private string name = "none";
+        [JsonProperty] [SerializeField] private string sprite = "none";
+        [JsonProperty] [SerializeField] private string sceneURL = "none";
+        [SerializeField] private List<Step> steps;
         [SerializeField] private int moneyInLocation;
-        [SerializeField] private SceneLoaderAsset scene;
         [SerializeField] private bool locked;
-        [SerializeField] private int _currentProgress;
-        private const int _maxProgress = 6;
+        [SerializeField] private int currentProgress;
 
-        public int CurrentProgress => _currentProgress;
 
-        public LocationInfoData GetCopy() =>
-            new(sprite, name,
-                progress = PlayerPrefs.HasKey(name)
-                    ? $"{_currentProgress = PlayerPrefs.GetInt(name)}/{_maxProgress}"
-                    : $"{_currentProgress = 0}/{_maxProgress}", enemies, moneyInLocation, scene, locked);
+        [JsonIgnore]
+        public Step CurrentStep => currentProgress >= steps.Count
+            ? steps[^1]
+            : steps[currentProgress];
+
+        [JsonIgnore] public string Name => name;
+        [JsonIgnore] public List<Step> Steps => steps;
 
         public void AddProgressValue(int value)
         {
-            _currentProgress = Mathf.Clamp(_currentProgress += value, 0, _maxProgress);
-            PlayerPrefs.SetInt(name, _currentProgress);
-            progress = $"{_currentProgress}/{_maxProgress}";
+            currentProgress = Mathf.Clamp(currentProgress += value, 0, steps.Count);
+            PlayerPrefs.SetInt(name, currentProgress);
+        }
+
+        public void Draw()
+        {
+            if(steps is null) return;
+            foreach (var step in steps)
+            {
+                step.Draw();
+            }
         }
     }
 }

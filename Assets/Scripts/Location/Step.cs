@@ -1,39 +1,50 @@
-using MapSystem;
+using System;
+using System.Collections.Generic;
 using MapSystem.Placeholders.Step;
 using UnityEngine;
 using LocationInfo = Scriptable_objects.LocationInfo;
+using Newtonsoft.Json;
 
 namespace Location
 {
-    public class Step : MonoBehaviour
+    [Serializable]
+    public class Step
     {
-        [SerializeField] private Triggers triggers;
-        [SerializeField] private MapSystem.Placeholders.Step.Spawners spawner;
-        
-        public void BindPlayerTransform(Transform transform)
-        {
-            triggers.BindTransfromPlayer(transform);
-            spawner.BindPlayerTransform(transform);
-        }
+        [SerializeField] private TriggersConfig triggers;
+        [SerializeField] private List<SpawnerConfig> spawners;
+
+        [JsonIgnore] public TriggersConfig TriggersConfig => triggers;
+        [JsonIgnore] public List<SpawnerConfig> SpawnerConfigs => spawners;
 
         public void BindLocation(LocationInfo locationInfo) => triggers.BindLocation(locationInfo);
 
         public void Initialize()
         {
             triggers.Initialize();
-            spawner.Initialize();
+            if (spawners is null || spawners.Count == 0) return;
+            foreach (var spawner in spawners)
+            {
+                spawner.Initialize();
+            }
         }
 
-        private void FixedUpdate()
+        public void Update(Transform player)
         {
-            triggers.Update();
-            spawner.Update();
+            triggers.Update(player.position);
+            foreach (var spawner in spawners)
+            {
+                spawner.Update(player.position);
+            }
         }
 
-        private void OnDrawGizmos()
+        public void Draw()
         {
-            spawner.Draw();
             triggers.Draw();
+            if (spawners is null || spawners.Count == 0) return;
+            foreach (var spawner in spawners)
+            {
+                spawner.Draw();
+            }
         }
     }
 }

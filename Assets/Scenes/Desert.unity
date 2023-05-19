@@ -2161,9 +2161,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3af2118daff46f1a2c8bbece98d6b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps:
-  - {fileID: 5265760152944762186, guid: c4ebd63ebd4ddee478bbf972dd1063cd, type: 3}
-  locationInfo: {fileID: 11400000, guid: 9c014a2c677440f4299f6fc33b304f2c, type: 2}
+  locationInfoPath: LocationStep/Test.json
+  locationInfo:
+    sprite: none
+    name: none
+    sceneURL: none
+    steps:
+    - triggers:
+        abilities:
+        - bound:
+            bound:
+              m_Center: {x: -7.157731, y: 0, z: 19.143845}
+              m_Extent: {x: 4.8757453, y: 0.8473892, z: 0.8473892}
+        cameraBoss:
+          bound:
+            bound:
+              m_Center: {x: -9.039542, y: 0, z: 24.941837}
+              m_Extent: {x: 4.877661, y: 0.9555604, z: 0.9555604}
+        finish:
+          bound:
+            bound:
+              m_Center: {x: -7.0259933, y: 0, z: 7.7493668}
+              m_Extent: {x: 3.18, y: 0.55318666, z: 0.55318666}
+      spawners:
+      - handlers:
+        - data: {fileID: 0}
+          point:
+          - Value: {x: -8.56, y: 0, z: 13.999779}
+        trigger:
+          bound:
+            bound:
+              m_Center: {x: -9.182824, y: 0, z: 36.013817}
+              m_Extent: {x: 3.6782777, y: 0.46795207, z: 0.46795207}
+    moneyInLocation: 0
+    locked: 0
+    currentProgress: 0
   player: {fileID: 1324679435}
 --- !u!4 &466589275
 Transform:
@@ -2173,7 +2205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466589273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

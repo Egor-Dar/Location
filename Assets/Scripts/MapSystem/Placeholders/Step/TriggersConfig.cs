@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 using LocationInfo = Scriptable_objects.LocationInfo;
 
@@ -9,13 +10,13 @@ namespace MapSystem.Placeholders.Step
     public sealed class TriggersConfig
     {
         [SerializeField] private List<Trigger> abilities;
-        [SerializeField] private Trigger cameraBoss;
-        [SerializeField] private Trigger finish;
+        [JsonProperty] [SerializeField] private Trigger cameraBoss;
+        [JsonProperty] [SerializeField] private Trigger finish;
         private LocationInfo _currentLocation;
 
         private bool _initialized;
 
-
+        [JsonIgnore] public List<Trigger> Abilities => abilities;
         public void BindLocation(LocationInfo location) => _currentLocation = location;
 
         public void Update(Vector3 position)
@@ -30,9 +31,11 @@ namespace MapSystem.Placeholders.Step
 
         public void Draw()
         {
+            cameraBoss ??= new Trigger();
             cameraBoss.BindColor(Color.magenta);
             cameraBoss.Draw();
 
+            finish ??= new Trigger();
             finish.BindColor(Color.green);
             finish.Draw();
 

@@ -1,24 +1,26 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Spawners;
 using UnityEngine;
-using Object = UnityEngine.Object;
+using UnityEngine.Serialization;
 
 namespace MapSystem.Placeholders.Step
 {
     [Serializable]
     public class SpawnerConfig
     {
-        [SerializeField] private List<EnemySpawnInfo> handlers;
-        [SerializeField] private Trigger trigger;
+        [SerializeField] private List<EnemySpawnInfo> enemies;
+        [JsonProperty] [SerializeField] private Trigger trigger;
         private bool _initialized;
 
+        [JsonIgnore] public List<EnemySpawnInfo> Enemies => enemies;
 
         public void Initialize()
         {
             if (_initialized) return;
             _initialized = true;
-            trigger.Initialize((() => Print($"Spawn {handlers[0].Positions.Count} enemies")));
+            trigger.Initialize((() => Print($"Spawn {enemies[0].Positions.Count} enemies")));
             Print("Initialize completed");
         }
 
@@ -27,10 +29,10 @@ namespace MapSystem.Placeholders.Step
 
         public void Draw()
         {
-            if(handlers.Count == 0 && handlers[0]==null) return;
-            foreach (var spawnInfo in handlers)
+            if (enemies.Count == 0 && enemies[0] == null) return;
+            foreach (var spawnInfo in enemies)
             {
-                if(spawnInfo.Positions.Count== 0&& spawnInfo.Positions[0] == null) return;
+                if (spawnInfo.Positions.Count == 0 && spawnInfo.Positions[0] == null) return;
                 foreach (var position in spawnInfo.Positions)
                 {
                     trigger.BindColor(Color.yellow);
