@@ -10,13 +10,25 @@ namespace MapSystem.Placeholders.Step
     public sealed class TriggersConfig
     {
         [SerializeField] private List<Trigger> abilities;
-        [JsonProperty] [SerializeField] private Trigger cameraBoss;
-        [JsonProperty] [SerializeField] private Trigger finish;
+        [SerializeField] private Trigger cameraBoss;
+        [SerializeField] private Trigger finish;
         private LocationInfo _currentLocation;
 
         private bool _initialized;
 
         [JsonIgnore] public List<Trigger> Abilities => abilities;
+        [JsonIgnore] public Trigger CameraBoss => cameraBoss;
+        [JsonIgnore] public Trigger Finish => finish;
+
+        public void AddAbility(Trigger variant)
+        {
+            abilities ??= new List<Trigger>();
+            abilities.Add(variant);
+        }
+
+        public void BindCameraBoss(Trigger variant) => cameraBoss = variant;
+        public void BindFinish(Trigger variant) => finish = variant;
+
         public void BindLocation(LocationInfo location) => _currentLocation = location;
 
         public void Update(Vector3 position)

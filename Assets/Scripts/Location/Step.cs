@@ -15,6 +15,14 @@ namespace Location
 
         [JsonIgnore] public TriggersConfig TriggersConfig => triggers;
         [JsonIgnore] public List<SpawnerConfig> SpawnerConfigs => spawners;
+        public void BindTriggers(TriggersConfig variant) => triggers = variant;
+
+        public void AddSpawner(SpawnerConfig variant)
+        {
+            spawners ??= new List<SpawnerConfig>();
+            if (spawners.Contains(variant)) return;
+            spawners.Add(variant);
+        }
 
         public void BindLocation(LocationInfo locationInfo) => triggers.BindLocation(locationInfo);
 

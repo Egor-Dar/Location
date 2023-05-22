@@ -17,6 +17,10 @@ namespace MapSystem.Placeholders.Step
         private Action _onExit;
         private Color _boundColor;
 
+        public BoundRef Bound => bound;
+
+        public void BindBound(BoundRef variant) => bound = variant;
+
         public void Initialize(Action onEntered)
         {
             if (_initialized) return;
@@ -57,14 +61,13 @@ namespace MapSystem.Placeholders.Step
         }
 
         [Serializable]
-        private class BoundRef
+        public class BoundRef
         {
             [Gizmo] [SerializeField] private Bounds bound;
             [JsonIgnore] private Vector3Ref _setter;
 
-
-            [JsonProperty]
-            private Vector3Ref SizeJson
+            [JsonIgnore]
+            public Vector3Ref SizeJson
             {
                 get
                 {
@@ -73,9 +76,10 @@ namespace MapSystem.Placeholders.Step
                     return _setter;
                 }
                 set => bound.size = value.Value;
-            }            
-            [JsonProperty]
-            private Vector3Ref PositionJson
+            }
+
+            [JsonIgnore]
+            public Vector3Ref PositionJson
             {
                 get
                 {
@@ -85,7 +89,7 @@ namespace MapSystem.Placeholders.Step
                 }
                 set => bound.center = value.Value;
             }
-            
+
             [JsonIgnore]
             public Vector3 Size
             {
@@ -106,7 +110,7 @@ namespace MapSystem.Placeholders.Step
                 {
                     _setter ??= new Vector3Ref();
                     _setter.Value = value;
-                    PositionJson = _setter;                    
+                    PositionJson = _setter;
                 }
             }
 

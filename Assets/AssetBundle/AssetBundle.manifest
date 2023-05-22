@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1716018496
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: locations/desert
+      Dependencies: {}

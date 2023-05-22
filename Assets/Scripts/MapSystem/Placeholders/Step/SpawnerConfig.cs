@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Spawners;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace MapSystem.Placeholders.Step
 {
@@ -11,11 +10,18 @@ namespace MapSystem.Placeholders.Step
     public class SpawnerConfig
     {
         [SerializeField] private List<EnemySpawnInfo> enemies;
-        [JsonProperty] [SerializeField] private Trigger trigger;
+        [SerializeField] private Trigger trigger;
         private bool _initialized;
 
         [JsonIgnore] public List<EnemySpawnInfo> Enemies => enemies;
+        [JsonIgnore] public Trigger Trigger => trigger;
+        public void BindTrigger(Trigger value) => trigger = value;
 
+        public void AddEnemy(EnemySpawnInfo variant)
+        {
+            enemies ??= new List<EnemySpawnInfo>();
+            enemies.Add(variant);
+        }
         public void Initialize()
         {
             if (_initialized) return;
